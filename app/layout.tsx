@@ -1,8 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import { ThemeProvider } from "../src/context/theme-context";
-import { LanguageProvider } from "../src/context/language-context";
-import { Providers } from "./Providers";
+import { Providers } from "../components/Providers";.tsx";
 
 export const metadata = {
   title: "Clausely",
@@ -14,11 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ClerkProvider>
       <html lang="en" className="dark">
         <body>
-          <Providers>
-            <ThemeProvider>
-              <LanguageProvider>{children}</LanguageProvider>
-            </ThemeProvider>
-          </Providers>
+          <Providers>{children}</Providers>
         </body>
       </html>
     </ClerkProvider>
