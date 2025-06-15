@@ -1,6 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import { Providers } from "../components/Providers";.tsx";
+import { Providers } from "./Providers";
 
 export const metadata = {
   title: "Clausely",
