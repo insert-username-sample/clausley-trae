@@ -7,9 +7,10 @@ import Image from 'next/image';
 interface CarouselProps {
   images: string[];
   interval?: number;
+  containerClassName?: string;
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) => {
+export const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000, containerClassName = "w-2/4 mx-auto" }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export const Carousel: React.FC<CarouselProps> = ({ images, interval = 5000 }) =
   };
 
   return (
-    <div className="relative w-2/4 mx-auto h-96 overflow-hidden rounded-2xl shadow-2xl">
+    <div className={`relative ${containerClassName} h-96 overflow-hidden rounded-2xl shadow-2xl`}>
       <AnimatePresence initial={false} custom={currentIndex}>
         <motion.div
           key={currentIndex}
